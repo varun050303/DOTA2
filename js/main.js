@@ -13,7 +13,7 @@ fetch(`${dotaApi}/constants/heroes`)
                 name: hero.localized_name,
                 attackType: hero.attack_type.toLowerCase(),
                 primaryAttribute: hero.primary_attr,
-                roles: hero.roles,
+                roles: hero.roles.map(role => role.toLowerCase()),
                 image: `http://cdn.dota2.com/apps/dota2/images/heroes/${hero.name.replace("npc_dota_hero_", "")}_full.png`
             }
         })
@@ -61,7 +61,7 @@ const filterHeroesByCategories = heroes => {
         return selectedAttackTypes.includes(hero.attackType)
     }).filter(hero => {
         if (selectedPrimaryAttributes.length === 0) return true
-        return selectedPrimaryAttributes.includes(hero.primary_attr)
+        return selectedPrimaryAttributes.includes(hero.primaryAttribute)
     }).filter(hero => {
         if (selectedRoles.length === 0) return true
         for (const role of selectedRoles) {
