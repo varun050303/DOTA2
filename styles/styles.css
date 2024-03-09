@@ -58,11 +58,16 @@ label {
 
 .heroes-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   align-content: center;
   grid-auto-flow: row;
   gap: 1rem;
   padding: 0;
+  list-style: none;
+}
+
+li {
+  min-width: 0;
 }
 
 .heroes-list img {
