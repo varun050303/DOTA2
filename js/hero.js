@@ -1,4 +1,4 @@
-const heroName = 'axe'
+const heroName = 'nevermore'
 const dotaApi = 'https://api.opendota.com/api'
 const heroNameEl = document.querySelector('[data-hero-name]')
 const heroImageEl = document.querySelector('[data-hero-image]')
@@ -12,6 +12,7 @@ fetch(`${dotaApi}/constants/heroes`)
         const heroes = Object.values(body).map(hero => {
             return {
                 name: hero.localized_name,
+                npcHeroName: hero.name.replace('npc_dota_hero_', ''),
                 attackType: hero.attack_type.toLowerCase(),
                 primaryAttribute: hero.primary_attr,
                 roles: hero.roles.map(role => role.toLowerCase()),
@@ -19,14 +20,8 @@ fetch(`${dotaApi}/constants/heroes`)
             }
         })
         console.log(heroes)
-        const hero = heroes.find(h => h.name.toLowerCase() === heroName)
-        // Check if a hero was found
-        if (hero) {
-            console.log(hero);
-            heroImageEl.src = `${hero.image}`;
-        } else {
-            console.log(`Hero '${heroName}' not found.`);
-        }
+        const hero = heroes.find(h => h.npcHeroName.toLowerCase() === heroName)
+        heroImageEl.src = `${hero.image}`;
     })
 
 fetch(`${dotaApi}/constants/abilities`)
