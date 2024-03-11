@@ -106,3 +106,14 @@ li {
 .offsite-is-open .overlay {
   display: initial;
 }
+
+.hero_img {
+  float: left;
+  width: 340px;
+  height: 190px;
+  margin: 1rem;
+}
+
+.abilities li {
+  display: flex;
+}
