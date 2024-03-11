@@ -116,4 +116,31 @@ li {
 
 .abilities li {
   display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 8px;
+  margin: 42px 0;
+}
+
+.abilities li img {
+  width: 80px;
+  height: 80px;
+}
+
+.abilities li p {
+  margin: 0;
+}
+
+.ability__title {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.ability__description {
+  font-size: 16px;
+}
+
+.abilities {
+  border: 3px solid #4e4e4e;
 }

@@ -43,9 +43,11 @@ Promise.all([
         })
         .map(ability => {
             return `<li class="ability">
-        <p class="ability__title">${ability.name}</p>
         <img class="ability__img" src="${ability.image}" alt="${ability.name}" />
+        <div>
+        <p class="ability__title">${ability.name}</p>
         <p class="ability__description">${ability.description}</p>
+        </div>
         </li>`
         })
         .join('')
