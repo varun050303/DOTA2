@@ -47,7 +47,6 @@ const addHeroToDom = hero => {
             <img src="${hero.image}" alt="${hero.name} image" />
             </a>
             `
-
     heroesList.appendChild(li)
 }
 

@@ -13,6 +13,11 @@ html {
 
 body {
   background-color: var(--primaryBg-color);
+  color: var(--gray-200);
+}
+
+.container {
+  margin: 1rem;
 }
 
 .offsite-container {
